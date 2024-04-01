@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Firo's Express Skills</title>
-</head>
-<body>
-    <a href="/">Home</a>
-    <a href="/skills">All Skills</a>
- <h3><%= skill.desc %></h3>
- <h3></h3>
-  </body>
-</html>
+<%- include("../partials/header") %>
+<h3>
+    <%= skill.skill %>
+</h3>    
+<h5>
+        <%= skill.desc %>
+    </h5>
+    <a href="/skills/<%= skill.id %>/edit"> Edit Skill </a>
+   
 
-  
+
+    <form action="/skills/<%= skill.id %>?_method=DELETE"
+        class="delete-form" method="POST">
+        <button type="submit">Delete Skill</button>
+      </form>
+
+      <%- include("../partials/footer") %>
