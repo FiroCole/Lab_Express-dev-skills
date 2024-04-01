@@ -1,17 +1,17 @@
 <%- include("../partials/header") %>
-<h3>
-    <%= skill.skill %>
-</h3>    
-<h5>
+    <h3>
+        <%= skill.skill %>
+    </h3>
+    <h5>
         <%= skill.desc %>
     </h5>
-    <a href="/skills/<%= skill.id %>/edit"> Edit Skill </a>
-   
 
+    <form action="/skills/<%= skill.id %>/edit"">
+        <button type=" submit">Edit Skill</button>
+    </form>
 
-    <form action="/skills/<%= skill.id %>?_method=DELETE"
-        class="delete-form" method="POST">
+    <form action="/skills/<%= skill.id %>?_method=DELETE" class="delete-form" method="POST">
         <button type="submit">Delete Skill</button>
-      </form>
+    </form>
 
-      <%- include("../partials/footer") %>
+    <%- include("../partials/footer") %>
